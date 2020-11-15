@@ -65,8 +65,8 @@ function init() {
 
     new School(scene, -150, 600, false);
     new School(scene, 2000, 600, true);
-    new Building(scene, 250, 600, 650, 300, 600, 950, "resources/wall_empty.jpg");
-    new Building(scene, -550, 600, 650, 300, 600, 950, "resources/wall_empty.jpg");
+    new Building(scene, 250, 600, 650, 300, 600, 1000, "resources/wall_empty.jpg");
+    new Building(scene, -550, 600, 650, 300, 600, 1000, "resources/wall_empty.jpg");
 
     new Building(scene, -150, 1170, 1700, 2100, 50,1300,"resources/root.png");
     new Building(scene, -150, 1170, -450, 2100, 50,1300,"resources/root.png");
@@ -120,16 +120,30 @@ function init() {
     let ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
     scene.add(ambientLight);
 
-    animate();
+    animate(0.1, 0.1);
 
 }
 
-function animate() {
+function animate(runFoot, runVoll) {
     sun.rotation.y += Math.PI / 500;
     ballFootball.rotation.z += Math.PI / 500;
-    ballFootball.position.z -= 0.1;
+    ballFootball.position.z -= runFoot;
     ballVolleyball.rotation.z += Math.PI / 500;
-    ballVolleyball.position.x -= 0.1;
+    ballVolleyball.position.x -= runVoll;
+
+    if (ballFootball.position.z === -1000) {
+        runFoot = 0.1;
+    }
+    if (ballFootball.position.z === 1000) {
+        runFoot = -0.1;
+    }
+
+    if (ballVolleyball.position.x === -1300) {
+        runVoll = 0.1;
+    }
+    if (ballVolleyball.position.x === 1300) {
+        runVoll = -0.1;
+    }
 
 
    /* for (let i = 0; i < flakeArray.length / 2; i++) {
@@ -197,7 +211,7 @@ function animate() {
     }
 
     renderer.render(scene, camera);
-    requestAnimationFrame(animate)
+    requestAnimationFrame(function() {animate(runFoot, runVoll)})
 }
 
 function keyDown(event){
