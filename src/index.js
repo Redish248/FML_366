@@ -73,10 +73,10 @@ function init() {
 
     new Building(scene,-150, 90, 2310, 210, 280, 20, "resources/door.png");
 
-   /* snow = new Snow().createSnow(flakeCount);
+    snow = new Snow().createSnow(flakeCount);
     scene.add(snow);
 
-    flakeArray = snow.children;*/
+    flakeArray = snow.children;
 
     new Fence(scene,-1800,-35, -500, 30, 300, 8300);
     new Fence(scene,4900,-35, -500, 30, 300, 8300);
@@ -132,7 +132,7 @@ function animate() {
     ballVolleyball.position.x -= 0.1;
 
 
-   /* for (let i = 0; i < flakeArray.length / 2; i++) {
+    for (let i = 0; i < flakeArray.length / 2; i++) {
         flakeArray[i].rotation.y += 0.01;
         flakeArray[i].rotation.x += 0.02;
         flakeArray[i].rotation.z += 0.03;
@@ -152,7 +152,7 @@ function animate() {
 
         snow.rotation.y -= 0.0000002;
     }
-*/
+
 
 
     if(keyboard[83]){ // S key
