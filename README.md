@@ -2,8 +2,8 @@
 Компьютерная графика, WebGL
 
 ### Запуск:
-npm run build
-open index.html
+###### npm run build
+###### open index.html
 
 ### Управление камерой:
 ###### Клавиши W, S, A, D
