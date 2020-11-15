@@ -7,7 +7,7 @@ export default class Sun {
 
     createSun(radius) {
         let textureLoader = new THREE.TextureLoader();
-        let sunTexture = textureLoader.load("resources/sun.png");
+        let sunTexture = textureLoader.load("../resources/sun.png");
 
         let geometry = new THREE.SphereGeometry(radius, 12, 12);
         let material = new THREE.MeshPhongMaterial({map:sunTexture});

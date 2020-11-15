@@ -12,7 +12,7 @@ export default class Road {
 
     createGround(width, height) {
         let textureLoader = new THREE.TextureLoader();
-        let grassTexture = textureLoader.load("resources/tunnel_road.jpg");
+        let grassTexture = textureLoader.load("../resources/tunnel_road.jpg");
 
         return new THREE.Mesh(
             new THREE.PlaneGeometry(width, height, 20,20),

@@ -1,5 +1,4 @@
 import {WEBGL} from "three/examples/jsm/WebGL.js";
-import "./css/style.css";
 import * as THREE from 'three';
 import Sun from "./js/Sun";
 import Ground from "./js/Ground";
@@ -8,10 +7,10 @@ import Road from "./js/Road";
 import Volleyball from "./js/Volleyball";
 import Football from "./js/Football";
 import Building from "./js/building";
-import Snow from "./js/Snow";
-import Tree from "./js/Tree";
 import Fence from "./js/Fence";
 import Ball from "./js/Ball";
+import Net from "./js/Net";
+import Conus from "./js/Conus";
 
 function component() {
     const element = document.createElement('canvas');
@@ -25,7 +24,7 @@ let keyboard = {};
 let sun, ballFootball, ballVolleyball;
 let flakeArray, snow;
 let flakeCount = 100000;
-let player = { height:1.8, speed:5, turnSpeed:Math.PI*0.02 };
+let player = { height:1.8, speed:7, turnSpeed:Math.PI*0.02 };
 
 function init() {
     let width = window.innerWidth;
@@ -65,13 +64,13 @@ function init() {
 
     new School(scene, -150, 600, false);
     new School(scene, 2000, 600, true);
-    new Building(scene, 250, 600, 650, 300, 600, 1000, "resources/wall_empty.jpg");
-    new Building(scene, -550, 600, 650, 300, 600, 1000, "resources/wall_empty.jpg");
+    new Building(scene, 250, 600, 650, 300, 600, 1000, "../resources/wall_empty.jpg");
+    new Building(scene, -550, 600, 650, 300, 600, 1000, "../resources/wall_empty.jpg");
 
-    new Building(scene, -150, 1170, 1700, 2100, 50,1300,"resources/root.png");
-    new Building(scene, -150, 1170, -450, 2100, 50,1300,"resources/root.png");
+    new Building(scene, -150, 1170, 1700, 2100, 50,1300,"../resources/root.png");
+    new Building(scene, -150, 1170, -450, 2100, 50,1300,"../resources/root.png");
 
-    new Building(scene,-150, 90, 2310, 210, 280, 20, "resources/door.png");
+    new Building(scene,-150, 90, 2310, 210, 280, 20, "../resources/door.png");
 
    /* snow = new Snow().createSnow(flakeCount);
     scene.add(snow);
@@ -82,6 +81,11 @@ function init() {
     new Fence(scene,4900,-35, -500, 30, 300, 8300);
     new Fence(scene,1550,-35, -4650, 6700, 300, 30);
     new Fence(scene,2700,-35, 3650, 4400, 300, 30);
+
+    new Net(scene, 200, 370, -3000, 20, 350, 1800);
+
+    new Conus(scene, 0,3000, 2000)
+
 
     ballFootball = new Ball().createBall(30, true);
     ballFootball.position.x = 4000;

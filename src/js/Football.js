@@ -13,7 +13,7 @@ export default class Football {
 
     createGround(width, height) {
         let textureLoader = new THREE.TextureLoader();
-        let grassTexture = textureLoader.load("resources/foot.jpg");
+        let grassTexture = textureLoader.load("../resources/foot.jpg");
 
 
         return new THREE.Mesh(

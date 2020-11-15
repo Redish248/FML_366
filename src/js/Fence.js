@@ -11,14 +11,10 @@ export default class Fence {
 
 
     createFence(width, height, depth) {
-        let textureLoader = new THREE.TextureLoader();
-        let fenceTexture = textureLoader.load("resources/zabor.png");
-
         return new THREE.Mesh(
             new THREE.BoxGeometry(width, height, depth),
             new THREE.MeshPhongMaterial({
                 color:0x4f3200
-                //map:fenceTexture
             })
         );
     }

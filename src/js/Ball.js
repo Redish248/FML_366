@@ -4,7 +4,7 @@ export default class Ball {
 
     createBall(radius, isFootball) {
         let textureLoader = new THREE.TextureLoader();
-        let ballTexture = textureLoader.load(isFootball? "resources/ball_football.jpg" : "resources/ball_volleyball.jpg");
+        let ballTexture = textureLoader.load(isFootball? "../resources/ball_football.jpg" : "../resources/ball_volleyball.jpg");
 
         let geometry = new THREE.SphereGeometry(radius, 12, 12);
 

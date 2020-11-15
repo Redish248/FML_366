@@ -4,7 +4,7 @@ export default class Snow {
 
     createSnow(flakeCount) {
         let textureLoader = new THREE.TextureLoader();
-        let snowTexture = textureLoader.load("resources/snow.jpg");
+        let snowTexture = textureLoader.load("../resources/snow.jpg");
 
         let flakeGeometry = new THREE.SphereGeometry(5, 12, 12); // radius
         let flakeMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff, map: snowTexture });
