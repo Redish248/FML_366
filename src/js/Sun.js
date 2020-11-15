@@ -2,9 +2,6 @@ import * as THREE from "three";
 
 export default class Sun {
 
-    constructor() {
-    }
-
     createSun(radius) {
         let textureLoader = new THREE.TextureLoader();
         let sunTexture = textureLoader.load("../resources/sun.png");

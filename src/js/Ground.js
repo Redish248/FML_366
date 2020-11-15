@@ -11,11 +11,11 @@ export default class Ground {
 
     createGround(width, height) {
         let textureLoader = new THREE.TextureLoader();
-        let grassTexture = textureLoader.load("../resources/grass.jpg");
+        let groundTexture = textureLoader.load("../resources/grass.jpg");
 
         return new THREE.Mesh(
             new THREE.PlaneGeometry( width, height, 20,20),
-            new THREE.MeshPhongMaterial({map:grassTexture})
+            new THREE.MeshPhongMaterial({map:groundTexture})
         );
     }
 }

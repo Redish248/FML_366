@@ -84,7 +84,7 @@ function init() {
 
     new Net(scene, 200, 370, -3000, 20, 350, 1800);
 
-    new Conus(scene, 0,3000, 2000)
+    new Conus(scene, 1500,100, 3000)
 
 
     ballFootball = new Ball().createBall(30, true);

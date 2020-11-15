@@ -14,7 +14,10 @@ export default class Fence {
         return new THREE.Mesh(
             new THREE.BoxGeometry(width, height, depth),
             new THREE.MeshPhongMaterial({
-                color:0x4f3200
+                color:0x4f3200,
+                opacity: 0.9,
+                transparent: true,
+                metalness: 1.0
             })
         );
     }
