@@ -72,10 +72,10 @@ function init() {
 
     new Building(scene,-150, 90, 2310, 210, 280, 20, "../resources/door.png");
 
-   /* snow = new Snow().createSnow(flakeCount);
+    snow = new Snow().createSnow(flakeCount);
     scene.add(snow);
 
-    flakeArray = snow.children;*/
+    flakeArray = snow.children;
 
     new Fence(scene,-1800,-35, -500, 30, 300, 8300);
     new Fence(scene,4900,-35, -500, 30, 300, 8300);
@@ -110,7 +110,7 @@ function init() {
      */
 
     //Create a SpotLight and turn on shadows for the light
-    const light = new THREE.SpotLight( 0xffffff );
+    const light = new THREE.PointLight( 0xffffff );
     light.castShadow = true; // default false
     light.position.set(3700, 4000, 3000)
     //Set up shadow properties for the light
@@ -118,7 +118,7 @@ function init() {
     light.shadow.mapSize.height = 10000;
     light.shadow.camera.near = 100;
     light.shadow.camera.far = 10000;
-    light.shadow.focus = 1;
+    //light.shadow.focus = 1;
     scene.add( light );
 
     let ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
@@ -150,7 +150,7 @@ function animate(runFoot, runVoll) {
     }
 
 
-   /* for (let i = 0; i < flakeArray.length / 2; i++) {
+    for (let i = 0; i < flakeArray.length / 2; i++) {
         flakeArray[i].rotation.y += 0.01;
         flakeArray[i].rotation.x += 0.02;
         flakeArray[i].rotation.z += 0.03;
@@ -170,7 +170,7 @@ function animate(runFoot, runVoll) {
 
         snow.rotation.y -= 0.0000002;
     }
-*/
+
 
 
     if(keyboard[83]){ // S key
