@@ -11,6 +11,7 @@ import Fence from "./js/Fence";
 import Ball from "./js/Ball";
 import Net from "./js/Net";
 import Conus from "./js/Conus";
+import Snow from "./js/Snow";
 
 function component() {
     const element = document.createElement('canvas');
