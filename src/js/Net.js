@@ -19,7 +19,9 @@ export default class Net {
             new THREE.BoxGeometry(width, height, depth),
             new THREE.MeshPhongMaterial({
                 color:0xffffff,
-                map:netTexture
+                map:netTexture,
+                opacity: 0.5,
+                transparent: true
             })
         );
     }

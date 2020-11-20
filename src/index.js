@@ -11,6 +11,7 @@ import Fence from "./js/Fence";
 import Ball from "./js/Ball";
 import Net from "./js/Net";
 import Conus from "./js/Conus";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import Snow from "./js/Snow";
 
 function component() {
@@ -59,7 +60,7 @@ function init() {
     scene.add(sun);
 
     new Ground(scene, 15000, 15000);
-    new Road(scene, 500,15000);
+    new Road(scene, 800,15000);
     new Volleyball(scene, 3800, 2500);
     new Football(scene, 2500, 3500);
 
@@ -111,7 +112,7 @@ function init() {
      */
 
     //Create a SpotLight and turn on shadows for the light
-    const light = new THREE.PointLight( 0xffffff );
+    const light = new THREE.SpotLight( 0xffffff );
     light.castShadow = true; // default false
     light.position.set(3700, 4000, 3000)
     //Set up shadow properties for the light
