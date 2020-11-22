@@ -32,6 +32,9 @@ export default class Road {
             car.position.y = 30;
             car.castShadow = true;
             car.receiveShadow = true;
+            car.traverse( function( node ) {
+                if ( node.isMesh ) { node.castShadow = true; }
+            } );
             scene.add(car);
         }, undefined, function ( error ) {
             console.error( error );
@@ -45,6 +48,9 @@ export default class Road {
             car.castShadow = true;
             car.receiveShadow = true;
             car.scale.set(2500,2500, 2500);
+            car.traverse( function( node ) {
+                if ( node.isMesh ) { node.castShadow = true; }
+            } );
             scene.add(car);
         }, undefined, function ( error ) {
             console.error( error );
@@ -59,6 +65,9 @@ export default class Road {
             car.castShadow = true;
             car.receiveShadow = true;
             car.scale.set(100,100, 100);
+            car.traverse( function( node ) {
+                if ( node.isMesh ) { node.castShadow = true; }
+            } );
             scene.add(car);
         }, undefined, function ( error ) {
             console.error( error );

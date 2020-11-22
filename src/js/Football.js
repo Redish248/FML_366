@@ -25,7 +25,7 @@ export default class Football {
     }
 
     addGoal(scene) {
-        const loader = new GLTFLoader();
+        let loader = new GLTFLoader();
 
         loader.load( '../resources/goal/scene.gltf', function ( gltf ) {
             let goal = gltf.scene;
@@ -36,6 +36,9 @@ export default class Football {
             goal.castShadow = true;
             goal.receiveShadow = true;
             goal.scale.set(0.09,0.09,0.09);
+            goal.traverse( function( node ) {
+                if ( node.isMesh ) { node.castShadow = true; }
+            } );
             scene.add(goal);
         }, undefined, function ( error ) {
             console.error( error );
@@ -50,9 +53,14 @@ export default class Football {
             goal.castShadow = true;
             goal.receiveShadow = true;
             goal.scale.set(0.09,0.09,0.09);
+            goal.traverse( function( node ) {
+                if ( node.isMesh ) { node.castShadow = true; }
+            } );
             scene.add(goal);
         }, undefined, function ( error ) {
             console.error( error );
         } );
+        loader.castShadow = true;
+
     }
 }
